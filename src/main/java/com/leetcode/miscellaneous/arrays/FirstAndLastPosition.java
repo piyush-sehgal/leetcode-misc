@@ -19,16 +19,13 @@ public class FirstAndLastPosition {
          *  Using linear search
          */
         int []result = {-1,-1};
-        for(int i = 0; i < nums.length; i++){
-            if(nums[i] == target){
-                result[0] = i;
-                break;
+        int index = 0;
+        for(int i = 0; i < nums.length; i++) {
+            if (nums[i] == target && index == 0) {
+                result[index++] = i;
             }
-        }
-        for(int i = nums.length-1; i >= 0; i--){
-            if(nums[i] == target){
-                result[1] = i;
-                break;
+            if (nums[i] == target) {
+                result[index] = i;
             }
         }
         return result;
