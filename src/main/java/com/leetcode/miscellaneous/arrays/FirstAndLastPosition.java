@@ -18,16 +18,49 @@ public class FirstAndLastPosition {
          *  TC: O(n)
          *  Using linear search
          */
-        int []result = {-1,-1};
-        int index = 0;
-        for(int i = 0; i < nums.length; i++) {
-            if (nums[i] == target && index == 0) {
-                result[index++] = i;
+//        int []result = {-1,-1};
+//        int index = 0;
+//        for(int i = 0; i < nums.length; i++) {
+//            if (nums[i] == target && index == 0) {
+//                result[index++] = i;
+//            }
+//            if (nums[i] == target) {
+//                result[index] = i;
+//            }
+//        }
+//        return result;
+
+        /**
+         * Using binary search
+         * TC: 0(logN)
+         * SC: O(1)
+         */
+        int leftIndex = getIndex(nums, target, true);
+        int rightIndex = getIndex(nums, target, false);
+        return new int[]{leftIndex,rightIndex};
+
+    }
+    public static int getIndex(int []arr, int target, boolean goLeft){
+        int index = -1;
+        int start = 0, end = arr.length-1;
+        while(start <= end){
+            int mid = start + (end - start) / 2;
+            if(arr[mid] == target){
+                index = mid;
+                if(goLeft){
+                    end = mid - 1;
+                }
+                else{
+                    start = mid + 1;
+                }
             }
-            if (nums[i] == target) {
-                result[index] = i;
+            else if(arr[mid] > target){
+                end = mid - 1;
+            }
+            else{
+                start = mid + 1;
             }
         }
-        return result;
+        return index;
     }
 }
