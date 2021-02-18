@@ -1,4 +1,4 @@
-package com.leetcode.miscellaneous.arrays;
+package com.leetcode.arrays;
 
 /**
  * #1470 https://leetcode.com/problems/shuffle-the-array/

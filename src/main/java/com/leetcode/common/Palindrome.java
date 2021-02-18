@@ -1,4 +1,4 @@
-package com.leetcode.miscellaneous.common;
+package com.leetcode.common;
 
 /**
  * https://leetcode.com/problems/palindrome-number/

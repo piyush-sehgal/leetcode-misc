@@ -1,4 +1,4 @@
-package com.leetcode.miscellaneous.arrays;
+package com.leetcode.arrays;
 
 /**
  * #34 https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/

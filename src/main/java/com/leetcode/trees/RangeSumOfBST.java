@@ -1,4 +1,4 @@
-package com.leetcode.miscellaneous.trees;
+package com.leetcode.trees;
 
 /**
  * #938 https://leetcode.com/problems/range-sum-of-bst/
