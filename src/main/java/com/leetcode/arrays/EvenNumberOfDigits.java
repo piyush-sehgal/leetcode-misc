@@ -7,6 +7,7 @@ public class EvenNumberOfDigits {
     public static void main(String[] args) {
         int []arr = {12,2,120,32};
         System.out.println(getNumberOfDigits(arr));
+        System.out.println(getNumberOfDigitsOptimized(arr));
     }
     public static int getNumberOfDigits(int []nums){
         int result = 0;
@@ -17,6 +18,15 @@ public class EvenNumberOfDigits {
                 numberOfDigits++;
             }
             if(numberOfDigits % 2 == 0){
+                result++;
+            }
+        }
+        return result;
+    }
+    public static int getNumberOfDigitsOptimized(int []nums){
+        int result = 0;
+        for(int num: nums){
+            if(Integer.toString(num).length() % 2 == 0){
                 result++;
             }
         }
