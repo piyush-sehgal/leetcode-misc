@@ -13,6 +13,7 @@ public class SingleNumber {
         int []arr = {5,4,3,5,4,3,1};
         System.out.println(singleNumber(arr));
         System.out.println(singleNumberOptimizedApproach(arr));
+        System.out.println(singleNumberBitManipulation(arr));
     }
     public static int singleNumber(int []arr){
         /**
@@ -53,5 +54,23 @@ public class SingleNumber {
             sumOfNums += i;
         }
         return 2 * sumOfSet - sumOfNums;
+    }
+
+    public static int singleNumberBitManipulation(int []arr){
+        /**
+         * If we take XOR of zero and some bit, it will return that bit
+         *      a ⊕ 0 = a
+         * If we take XOR of two same bits, it will return 0
+         *      a ⊕ a = 0
+         *
+         * a⊕b⊕a=(a⊕a)⊕b=0⊕b=b
+         * TC: O(n)
+         * SC: O(1)
+         */
+        int a = 0;
+        for (int i : arr) {
+            a ^= i;
+        }
+        return a;
     }
 }
