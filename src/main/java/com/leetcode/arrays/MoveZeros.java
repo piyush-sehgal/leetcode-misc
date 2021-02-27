@@ -7,7 +7,7 @@ public class MoveZeros {
     public static void main(String[] args) {
         int []arr = {0,1,0,3,12};
         moveZeros(arr);
-        moveZerosNoExtraSpace();
+        moveZerosNoExtraSpace(arr);
     }
     public static void moveZeros(int []arr){
         /**
@@ -26,7 +26,9 @@ public class MoveZeros {
         }
         for(int i = 0; i < size; i++){
             arr[i] = copy[i];
+            System.out.print(arr[i]+" ");
         }
+        System.out.println();
     }
 
     public static void moveZerosNoExtraSpace(int []arr){
@@ -46,6 +48,9 @@ public class MoveZeros {
             else{
                 i++;
             }
+        }
+        for(i = 0; i < arr.length; i++){
+            System.out.print(arr[i]+" ");
         }
     }
 }
