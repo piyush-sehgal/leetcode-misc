@@ -7,6 +7,7 @@ public class MissingNumber {
     public static void main(String[] args) {
         int []arr = {1,2};
         System.out.println(missingNumber(arr));
+        System.out.println(missingNumberWithoutExtraSpace(arr));
     }
     public static int missingNumber(int[] nums) {
         /**
@@ -24,5 +25,16 @@ public class MissingNumber {
             numsSum += nums[i];
         }
         return compSum-numsSum;
+    }
+    public static int missingNumberWithoutExtraSpace(int []nums){
+        /**
+         * TC: O(n)
+         * SC: O(1)
+         */
+        int res = nums.length;
+        for (int i = 0; i < nums.length; i++) {
+            res += i - nums[i];
+        }
+        return res;
     }
 }
